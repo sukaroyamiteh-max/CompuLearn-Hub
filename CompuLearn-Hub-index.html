@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="CompuLearn Hub — Interactive Computer Literacy and Technical Support Website">
+<title>CompuLearn Hub | Learn. Practice. Solve.</title>
+<style>
+:root{--bg:#07111f;--card:#0d1b2e;--text:#eef6ff;--muted:#a9bbce;--accent:#42d392;--blue:#5ca9ff;--line:#203650;--danger:#ff6b6b}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:linear-gradient(180deg,#07111f,#091827 55%,#06101c);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}.container{width:min(1120px,92%);margin:auto}
+nav{position:sticky;top:0;z-index:10;background:rgba(7,17,31,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.navbar{min-height:68px;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:900;font-size:1.15rem}.logo span{color:var(--accent)}
+.navlinks{display:flex;gap:22px;color:var(--muted);font-weight:700}.navlinks a:hover{color:#fff}
+.menu{display:none;background:none;border:1px solid var(--line);color:#fff;border-radius:10px;padding:8px 11px;font-size:1.2rem}
+.hero{padding:82px 0 70px;background:radial-gradient(circle at 80% 10%,rgba(66,211,146,.16),transparent 32%),radial-gradient(circle at 10% 20%,rgba(92,169,255,.14),transparent 30%)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:42px;align-items:center}
+.badge{display:inline-block;padding:7px 12px;border:1px solid #28506d;border-radius:999px;color:#bde9ff;background:#0b2032;font-size:.85rem;font-weight:700}
+h1{font-size:clamp(2.4rem,6vw,4.8rem);line-height:1.02;margin:18px 0}.hero p{font-size:1.1rem;color:var(--muted);max-width:650px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{border:0;border-radius:12px;padding:12px 18px;font-weight:800;cursor:pointer;background:var(--accent);color:#052014}
+.btn.secondary{background:transparent;color:#fff;border:1px solid var(--line)}
+.hero-card{background:linear-gradient(145deg,#10263d,#0a1727);border:1px solid var(--line);border-radius:22px;padding:28px}
+.code{background:#050b13;border-radius:14px;padding:20px;border:1px solid #1c2c3e;font-family:monospace;color:#bce8ff}
+.green{color:#65e6a5}.blue{color:#70b5ff}.yellow{color:#ffd479}
+section{padding:72px 0}section.alt{background:rgba(255,255,255,.018);border-block:1px solid rgba(255,255,255,.03)}
+.head{margin-bottom:30px}.head h2{font-size:2rem;margin:0}.head p{color:var(--muted);margin:5px 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#356184}
+.icon{font-size:2rem}.card h3{margin:10px 0 7px}.card p{color:var(--muted);margin:0}
+.lesson{margin-top:12px;padding:14px;border-radius:12px;background:#081524;color:#c8d8e8;display:none;border:1px solid #1c3147}.lesson.show{display:block}
+.quiz{max-width:760px;margin:auto;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px}
+.options{display:grid;gap:10px;margin:20px 0}.option{padding:13px 15px;border:1px solid var(--line);background:#091728;color:#fff;border-radius:12px;text-align:left;cursor:pointer}.option:hover{border-color:var(--blue)}
+#quizResult{min-height:28px;font-weight:800}
+.form{display:grid;gap:13px;max-width:720px}.form input,.form textarea{width:100%;border:1px solid var(--line);background:#081524;color:#fff;border-radius:12px;padding:13px;font:inherit}
+.form textarea{min-height:120px;resize:vertical}.note{font-size:.9rem;color:var(--muted)}
+footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);text-align:center}
+@media(max-width:800px){.hero-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:#07111f;border-bottom:1px solid var(--line);padding:18px 4%;flex-direction:column}.navlinks.open{display:flex}.menu{display:block}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.hero{padding-top:55px}section{padding:55px 0}}
+</style>
+</head>
+<body>
+<nav><div class="container navbar">
+<a class="logo" href="#top">Compu<span>Learn</span> Hub</a>
+<button class="menu" id="menuBtn">☰</button>
+<div class="navlinks" id="navLinks"><a href="#learn">Learn</a><a href="#support">Troubleshoot</a><a href="#quiz">Quiz</a><a href="#help">Get Help</a></div>
+</div></nav>
+<main id="top">
+<section class="hero"><div class="container hero-grid"><div>
+<span class="badge">Student ICT Learning & Support</span>
+<h1>Learn. Practice. Solve.</h1>
+<p>Build computer skills, understand ICT concepts, and solve common computer laboratory problems through simple interactive lessons.</p>
+<div class="buttons"><a class="btn" href="#learn">Start Learning</a><a class="btn secondary" href="#support">Fix a Problem</a></div>
+</div><div class="hero-card"><div class="code">
+<div><span class="green">student</span>@compulab:~$ <span class="blue">learn --today</span></div><br>
+<div>✓ Computer basics</div><div>✓ Files & folders</div><div>✓ Internet safety</div><div>✓ Hardware care</div><br>
+<div><span class="yellow">Ready to practice!</span></div>
+</div></div></div></section>
+
+<section id="learn"><div class="container"><div class="head"><h2>Interactive Lessons</h2><p>Choose a topic and reveal a quick student-friendly lesson.</p></div><div class="grid">
+<article class="card"><div class="icon">🖥️</div><h3>Computer Basics</h3><p>Learn how computers receive input, process information, store data, and produce output.</p><button class="btn lessonBtn">Learn more</button><div class="lesson">The CPU processes instructions, while RAM temporarily holds data and programs currently being used.</div></article>
+<article class="card"><div class="icon">📁</div><h3>Files & Folders</h3><p>Organize schoolwork so it is easy to find and protect.</p><button class="btn lessonBtn">Learn more</button><div class="lesson">Use clear filenames, folders by subject, regular backups, and avoid deleting unfamiliar files.</div></article>
+<article class="card"><div class="icon">🌐</div><h3>Internet Basics</h3><p>Understand browsers, websites, searches, and responsible online use.</p><button class="btn lessonBtn">Learn more</button><div class="lesson">A browser accesses websites. Check information using reliable sources and protect private information.</div></article>
+<article class="card"><div class="icon">📝</div><h3>Productivity Tools</h3><p>Use documents, presentations, and spreadsheets effectively.</p><button class="btn lessonBtn">Learn more</button><div class="lesson">Plan your work, use consistent formatting, save regularly, and review before submitting.</div></article>
+<article class="card"><div class="icon">🛡️</div><h3>Cyber Safety</h3><p>Build safer habits on school computers and online accounts.</p><button class="btn lessonBtn">Learn more</button><div class="lesson">Use strong unique passwords, update software, avoid suspicious links, and sign out of shared computers.</div></article>
+<article class="card"><div class="icon">🔧</div><h3>Hardware Care</h3><p>Learn simple ways to protect computers and peripherals.</p><button class="btn lessonBtn">Learn more</button><div class="lesson">Keep liquids away, handle cables carefully, keep vents clear, and report damaged equipment.</div></article>
+</div></div></section>
+
+<section id="support" class="alt"><div class="container"><div class="head"><h2>Quick Troubleshooting</h2><p>Basic checks before asking for technical support.</p></div><div class="grid">
+<article class="card"><h3>🐌 Slow Computer</h3><p><b>Try:</b> close unused programs, restart, check storage, and report repeated slow performance.</p></article>
+<article class="card"><h3>📶 No Internet</h3><p><b>Try:</b> check network status, reconnect if allowed, test another site, then report the issue.</p></article>
+<article class="card"><h3>⌨️ Mouse/Keyboard</h3><p><b>Try:</b> check the connection, try another port if permitted, and report damaged peripherals.</p></article>
+</div></div></section>
+
+<section id="quiz"><div class="container"><div class="head"><h2>Quick Quiz</h2><p>Test what you learned.</p></div><div class="quiz">
+<h3>What is RAM mainly used for?</h3>
+<div class="options"><button class="option" data-correct="false">A. Permanently storing all files</button><button class="option" data-correct="true">B. Temporarily holding data and programs in use</button><button class="option" data-correct="false">C. Connecting the computer to Wi-Fi</button><button class="option" data-correct="false">D. Printing documents</button></div>
+<div id="quizResult"></div></div></div></section>
+
+<section id="help" class="alt"><div class="container"><div class="head"><h2>Technical Help</h2><p>Prototype form for reporting common laboratory issues.</p></div>
+<form class="form" id="helpForm"><input required placeholder="Your name"><input required placeholder="What problem are you experiencing?"><textarea placeholder="Describe the problem (optional)"></textarea><button class="btn">Submit Help Request</button><div id="formResult" class="note"></div></form>
+<p class="note">Prototype: this form does not send information to a server or database yet.</p></div></section>
+</main>
+<footer><div class="container">© 2026 CompuLearn Hub · Interactive Computer Literacy and Technical Support Website</div></footer>
+<script>
+const menu=document.getElementById('menuBtn'),links=document.getElementById('navLinks');
+menu.onclick=()=>links.classList.toggle('open');
+document.querySelectorAll('.navlinks a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+document.querySelectorAll('.lessonBtn').forEach(b=>b.onclick=()=>{let x=b.nextElementSibling;x.classList.toggle('show');b.textContent=x.classList.contains('show')?'Hide lesson':'Learn more'});
+document.querySelectorAll('.option').forEach(o=>o.onclick=()=>{let r=document.getElementById('quizResult');if(o.dataset.correct==='true'){r.textContent='✅ Correct! RAM temporarily holds data and programs currently in use.';r.style.color='var(--accent)'}else{r.textContent='❌ Not quite. Try again!';r.style.color='var(--danger)'}});
+document.getElementById('helpForm').onsubmit=e=>{e.preventDefault();document.getElementById('formResult').textContent='✅ Demo request recorded on this page. A future version can connect this to a database or staff dashboard.';e.target.reset()};
+</script>
+</body>
+</html>
